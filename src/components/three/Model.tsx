@@ -1,7 +1,7 @@
 import { FC, useRef } from 'react';
 import * as THREE from 'three';
 import { GLTF } from 'three/examples/jsm/loaders/GLTFLoader';
-import { Sparkles, useGLTF } from '@react-three/drei';
+import { Sky, Sparkles, Stars, useGLTF } from '@react-three/drei';
 import { useFrame } from '@react-three/fiber';
 import { cameraSet } from '../../modules/datas';
 import { sceneState } from '../../modules/store';
@@ -60,7 +60,8 @@ export const Model: FC = () => {
 				onPointerEnter={handlePointerEnter}
 				onPointerLeave={handlePointerLeave}
 			/>
-			<Sparkles ref={sparklesRef} position-y={0.5} count={30} scale={[1.3, 2.2, 1.3]} size={4} speed={0.4} />
+			<Stars count={1000}/>
+			<Sparkles ref={sparklesRef} color={'#94d546'} position-y={0.5} count={30} scale={[1.3, 2.2, 1.3]} size={10} speed={0.4} />
 		</group>
 	)
 }
